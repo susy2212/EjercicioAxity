@@ -10,7 +10,6 @@ using Axity.VM;
 
 namespace Axity.Controllers
 {
-    [RoutePrefix("Api/login")]
     public class ValuesController : ApiController
     {
         EJERCICIOSEntities DB = new EJERCICIOSEntities();
