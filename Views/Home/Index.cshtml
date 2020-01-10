@@ -1,0 +1,42 @@
+﻿@model Axity.VM.LoginModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<script language="javascript">
+    function display() {
+        if ($("#Usuario").attr("value") == "")
+        {
+            alert("Por favor, ingrese su usuario");
+            return false;
+        } else if ($("#Password").attr("value") == "") {
+            alert("Por favor, ingrese su password.");
+            return false;
+        }
+        alert("Acceso exitoso");
+        return true;
+    }
+</script>
+
+<h3>Simple We API Login Form </h3>
+@using (Html.BeginForm("Index", "Home"))
+{
+    <table width="40%" cellpadding="1" cellspacing="5">
+        <tr>
+            <td colspan="2" style="color:#f00;font-size:larger">@ViewBag.Status</td>
+        </tr>
+        <tr>
+            <td align="right">Usuario :</td>
+            <td>@Html.TextBoxFor(m => m.Usuario, new { @style = "width:200px", @id = "txtUsuario" })</td>
+        </tr>
+        <tr>
+            <td align="right">Password :</td>
+            <td>@Html.PasswordFor(m => m.Password, new { @style = "width:200px", @id = "txtPassword" })</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Login" title="login" onclick=" display();" />
+            </td>
+        </tr>
+    </table>
+}

@@ -1,0 +1,22 @@
+﻿@model List<Axity.Models.Products>
+@{
+    ViewBag.Title = "Products";
+}
+
+<h2>Products</h2>
+
+<table class="table table-bordered table-responsive table-hover">
+    <tr>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Producto</td>
+    </tr>
+    @foreach(var result in Model)
+    {
+        <tr>
+            <td>@result.Id</td>
+            <td>@result.Nombre</td>
+            <td>@result.Cantidad</td>
+        </tr>
+    }
+</table>
